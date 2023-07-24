@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eb Bill Calculator</title>
+    <link rel="stylesheet" href="./ebbill.css">
+    <script>
+        function ebBill()
+        {
+            let input=Number(document.getElementById("input").value)
+            let unitprice=0.75;
+          let out=50*unitprice;
+
+            if(input<=50)
+            out=input*unitprice
+            else if(input>=51 && input<=100)
+            out=(input-50)*1+out
+            else if(input>=101 && input<=150)
+            out=(input-50)*1.30+out
+            else if(input>=151 && input<=200)
+            out=(input-50)*1.50+out
+            else  if (input>=201)
+            out=(input-50)*2+out
+            else 
+            out =out+input
+
+            let resu=document.getElementById("result")
+            resu.innerHTML=`Eb bill for consumed unit is Rs.${out}`
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>EB Bill Calculator</h2>
+        <div id="wrapperdiv">
+            <input type="text" name="bill" id="input">
+        </div>
+        <div>
+            <button type="button" id="calc" onclick="ebBill()">Calculate</button>
+        </div>
+        <div id="result">
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

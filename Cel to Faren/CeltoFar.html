@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius to farenheit </title>
+    <link rel="stylesheet" href="CF.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2 align="center">Celsius to Farenheit</h2>
+        <div id="wrapperdiv">
+            <input type="text" name="input" id="input" placeholder="Enter value">
+        </div>
+        
+        <div>
+            <button type="submit" onclick="convert()">Convert</button>
+        </div>
+
+        <div id =result>
+
+        </div>
+    </div>
+<script>
+    function convert(){
+        let st=Number(document.getElementById("input").value)
+        let c2f=st*1.8+32;
+        let res=document.getElementById("result")
+        res.innerHTML=c2f.toFixed(3) +" deg "
+    }
+</script>    
+</body>
+</html>

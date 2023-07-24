@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Words</title>
+    <link rel="stylesheet" href="./cal words.css">
+    <script>
+        function calculate(){
+            var val= document.getElementById("input").value
+            var num=0;
+            var split=val.split(' ')
+            for(var i=0;i<split.length;i++)
+            {
+                if(split[i]!==" ")
+                {
+                num +=1
+                }
+            }
+            var dis=document.getElementById("result") .innerHTML= num +" words "
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+    <h2 align="center">Type a Sentence</h2>
+        <div id="inputdiv">
+            <textarea name="words" id="input" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button type="submit" onclick="calculate()">Calculate Words</button>
+        </div>
+        <div id="result">   
+        </div>
+</div>
+</body>
+</html>
